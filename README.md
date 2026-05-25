@@ -1,31 +1,73 @@
 # agent-skills
-agent-skills
 
-This is project containing all agent skills I use.
-Each agent skill should be in its own folder
+A collection of reusable agent skill files for AI coding assistants. Each skill lives in its own folder and contains a `SKILL.md` with domain-specific instructions the agent follows when invoked.
 
-Lets create first skill called free-cad-project-setup. This skill is used to setup freecad project and how python code for freecad should be written
+## Skills
 
-- CAD files are generated using freecad python code
-- Read readme.md file to requirements
-- Always create multiple 3D CAD parts with file names starting part_number_name (e.g part_01_bin)
-- all paramaters should be in config file
-- All paramaters should scale with scale paramater
-- every part file should have main function to run seperatelyt
-- Every part code should export STEP and STL file to exports folder
-- before creating step and stl files, delete existing file
-- create 3 folders called - 3d-print, exports, media
-- create assembly.py file. This file should import all part files and create final assembly including each part
-- export assembly step and stl files to export folder
-- assembly should delete all files in exports and run each part file
-- assembly should use generated step files to create final assembly
-- look at below projects to find common patterns and include as part of this skill
+| Skill | Folder | Description |
+|---|---|---|
+| FreeCAD Project Setup | `free-cad-project-setup/` | Project structure, params.py conventions, part files, assembly, export, and print orientation for FreeCAD Python projects |
+| FreeCAD Visual Validation | `freecad-visual-validation/` | MCP-based visual validation procedure — required views, what to check, and defect handling |
+| FreeCAD Threading | `freecad-threading/` | FDM-printable thread construction using `makeHelix` + `makePipeShell`, clearances, male/female patterns |
+| FreeCAD Fits & Tolerances | `freecad-fits-tolerances/` | Sliding, rotating, press/glue fits, snap tabs, and hinge knuckle construction for FDM printing |
 
-/Users/intelligentmachine/Documents/workspace/3d-models/catch-basin-drain-kit
-/Users/intelligentmachine/Documents/workspace/3d-models/cord-storage-reel-v3
-/Users/intelligentmachine/Documents/workspace/3d-models/carry-bag-bin
+---
 
-rm -rf exports && /Applications/FreeCAD.app/Contents/Resources/bin/freecadcmd assembly.py &&  /Applications/FreeCAD.app/Contents/MacOS/FreeCAD exports/assembly.step
+## Installation
 
-/Applications/FreeCAD.app/Contents/Resources/bin/freecadcmd export_all.py
-/Applications/FreeCAD.app/Contents/MacOS/FreeCAD exports/assembly.step    
+### GitHub Copilot (VS Code)
+
+Skills are loaded via `.github/copilot-instructions.md` or VS Code instruction files (`.instructions.md`).
+
+1. Copy the skill folder(s) you want into your project, or reference them from a shared location.
+2. In your project root create (or append to) `.github/copilot-instructions.md`:
+
+   ```markdown
+   When setting up a FreeCAD project, follow the instructions in:
+   free-cad-project-setup/SKILL.md
+   ```
+
+   Alternatively, use a VS Code workspace instruction file at `.vscode/<name>.instructions.md` with a `applyTo` glob:
+
+   ```markdown
+   ---
+   applyTo: "**/*.py"
+   ---
+   Follow the FreeCAD project conventions defined in free-cad-project-setup/SKILL.md.
+   ```
+
+3. In chat, reference the skill explicitly: **"Follow the free-cad-project-setup skill"** or configure the skill path in your Copilot agent settings so it is loaded automatically.
+
+### Claude Code
+
+Claude Code reads instructions from `CLAUDE.md` at the project root (and optionally nested `CLAUDE.md` files in sub-folders).
+
+1. Copy the desired skill folder(s) into your project.
+2. Add a reference in your project's `CLAUDE.md`:
+
+   ```markdown
+   ## FreeCAD Projects
+   When working on FreeCAD Python code, read and follow:
+   - `free-cad-project-setup/SKILL.md` — project structure and part conventions
+   - `freecad-threading/SKILL.md` — thread construction
+   - `freecad-visual-validation/SKILL.md` — visual validation after every change
+   - `freecad-fits-tolerances/SKILL.md` — fits and tolerances
+   ```
+
+3. Claude Code will automatically load `CLAUDE.md` on startup and apply the referenced skill instructions during the session.
+
+---
+
+## Repository layout
+
+```
+agent-skills/
+├── free-cad-project-setup/
+│   └── SKILL.md
+├── freecad-fits-tolerances/
+│   └── SKILL.md
+├── freecad-threading/
+│   └── SKILL.md
+└── freecad-visual-validation/
+    └── SKILL.md
+```
