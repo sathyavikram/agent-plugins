@@ -1,3 +1,7 @@
+---
+description: FreeCAD fits and tolerances for FDM 3D printing — sliding fits, rotating fits, press/glue fits, snap tabs, and hinge knuckle construction for mating printed parts.
+---
+
 # Skill: FreeCAD Fits & Tolerances
 
 This skill covers designing mating parts for FDM 3D printing — sliding fits, rotating fits, press/glue fits, snap tabs, and hinge pin/bore pairs. Use this skill whenever two printed parts need to fit together.

@@ -1,3 +1,7 @@
+---
+description: FreeCAD threading for FDM 3D printing — implementing male and female threaded features using Part.makeHelix and makePipeShell, with FDM-appropriate clearances.
+---
+
 # Skill: FreeCAD Threading
 
 This skill covers implementing 3D-print-ready threaded features in FreeCAD Python scripts using `Part.makeHelix` and `makePipeShell`. Use this skill whenever a part requires male (external) or female (internal) threads.
