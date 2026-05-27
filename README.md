@@ -53,10 +53,10 @@ Install directly from the repository without registering the marketplace:
 
 ```sh
 # Install the freecad plugin directly from the repo subdirectory
-copilot plugin install intelligentmachine/agent-plugins:freecad
+copilot plugin install intelligentmachine/agent-plugins:plugins/freecad
 
 # Or from a local clone
-copilot plugin install ./freecad
+copilot plugin install ./plugins/freecad
 ```
 
 ---
@@ -109,17 +109,21 @@ Claude Code reads instructions from `CLAUDE.md` at the project root (and optiona
 ```
 agent-plugins/
 ├── .github/plugin/
-│   └── marketplace.json      # GitHub Copilot CLI marketplace manifest
+│   └── marketplace.json          # GitHub Copilot CLI marketplace manifest
 ├── .claude-plugin/
-│   └── marketplace.json      # Claude Code marketplace manifest
-└── freecad/
-    ├── plugin.json           # Plugin manifest
-    ├── agents/
-    │   ├── freecad-project.agent.md
-    │   └── freecad-visual-validation.agent.md
-    └── skills/
-        ├── freecad-fits-tolerances/
-        │   └── SKILL.md
-        └── freecad-threading/
-            └── SKILL.md
+│   └── marketplace.json          # Symlink → .github/plugin/marketplace.json (Claude Code)
+└── plugins/
+    └── freecad/
+        ├── plugin.json           # Plugin manifest
+        ├── .claude-plugin/
+        │   └── plugin.json       # Claude Code plugin manifest (mirrors plugin.json)
+        ├── .mcp.json             # MCP server config (FreeCAD HTTP server)
+        ├── agents/
+        │   ├── freecad-project.agent.md
+        │   └── freecad-visual-validation.agent.md
+        └── skills/
+            ├── freecad-fits-tolerances/
+            │   └── SKILL.md
+            └── freecad-threading/
+                └── SKILL.md
 ```
