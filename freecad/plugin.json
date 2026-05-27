@@ -1,0 +1,9 @@
+{
+  "name": "freecad",
+  "description": "FreeCAD skills for project setup, threading, fits & tolerances, script execution, and visual validation of 3D models.",
+  "version": "1.0.0",
+  "author": {
+    "name": "intelligentmachine"
+  },
+  "homepage": "https://github.com/intelligentmachine/agent-skills"
+}

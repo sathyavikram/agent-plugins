@@ -2,7 +2,7 @@
 
 This skill covers designing mating parts for FDM 3D printing — sliding fits, rotating fits, press/glue fits, snap tabs, and hinge pin/bore pairs. Use this skill whenever two printed parts need to fit together.
 
-> **Standalone**: this skill runs independently. Code examples reference `params.SCALE` — if the project uses a `params.py` (see `free-cad-project-setup` skill) this is already defined. If not, define `SCALE = 1.0` locally and substitute `params.SCALE` → `SCALE`.
+> **Standalone**: this skill runs independently. Code examples reference `params.SCALE` — if the project uses a `params.py` (see `freecad-project` agent) this is already defined. If not, define `SCALE = 1.0` locally and substitute `params.SCALE` → `SCALE`.
 
 ---
 

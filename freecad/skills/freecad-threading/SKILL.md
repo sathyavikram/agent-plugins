@@ -2,7 +2,7 @@
 
 This skill covers implementing 3D-print-ready threaded features in FreeCAD Python scripts using `Part.makeHelix` and `makePipeShell`. Use this skill whenever a part requires male (external) or female (internal) threads.
 
-> **Standalone**: this skill runs independently. Code examples reference `params.SCALE`, `params.THREAD_CLEARANCE`, and `params.GENERAL_CLEARANCE` — if the project uses a `params.py` (see `free-cad-project-setup` skill) these are already defined. If not, add these local constants at the top of your part file:
+> **Standalone**: this skill runs independently. Code examples reference `params.SCALE`, `params.THREAD_CLEARANCE`, and `params.GENERAL_CLEARANCE` — if the project uses a `params.py` (see `freecad-project` agent) these are already defined. If not, add these local constants at the top of your part file:
 > ```python
 > SCALE             = 1.0
 > THREAD_CLEARANCE  = 0.6 * SCALE
