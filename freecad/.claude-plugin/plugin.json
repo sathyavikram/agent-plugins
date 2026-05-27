@@ -3,7 +3,14 @@
   "description": "FreeCAD skills for project setup, threading, fits & tolerances, script execution, and visual validation of 3D models.",
   "version": "1.0.0",
   "author": {
-    "name": "intelligentmachine"
+    "name": "Sathya Vikram"
   },
-  "homepage": "https://github.com/intelligentmachine/agent-skills"
+  "license": "MIT",
+  "homepage": "https://github.com/intelligentmachine/agent-plugins",
+  "repository": "https://github.com/intelligentmachine/agent-plugins",
+  "keywords": ["freecad", "cad", "3d-printing", "fdm", "skills", "agents"],
+  "category": "engineering",
+  "agents": "agents/",
+  "skills": "skills/",
+  "mcpServers": ".mcp.json"
 }

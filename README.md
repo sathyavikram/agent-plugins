@@ -15,6 +15,52 @@ A collection of reusable agent skill files for AI coding assistants. Each skill 
 
 ## Installation
 
+### Plugin Marketplace (GitHub Copilot CLI & Claude Code)
+
+This repo is a plugin marketplace. Register it once, then install any plugin by name.
+
+**Register the marketplace:**
+
+```sh
+# GitHub Copilot CLI
+copilot plugin marketplace add intelligentmachine/agent-plugins
+
+# Claude Code
+claude plugin marketplace add intelligentmachine/agent-plugins
+```
+
+**Install the FreeCAD plugin:**
+
+```sh
+# GitHub Copilot CLI
+copilot plugin install freecad@agent-plugins
+
+# Claude Code
+claude plugin install freecad@agent-plugins
+```
+
+**Browse available plugins:**
+
+```sh
+copilot plugin marketplace browse agent-plugins
+```
+
+---
+
+### Manual installation (GitHub Copilot CLI / Claude Code)
+
+Install directly from the repository without registering the marketplace:
+
+```sh
+# Install the freecad plugin directly from the repo subdirectory
+copilot plugin install intelligentmachine/agent-plugins:freecad
+
+# Or from a local clone
+copilot plugin install ./freecad
+```
+
+---
+
 ### GitHub Copilot (VS Code)
 
 Skills are loaded via `.github/copilot-instructions.md` or VS Code instruction files (`.instructions.md`).
@@ -61,13 +107,19 @@ Claude Code reads instructions from `CLAUDE.md` at the project root (and optiona
 ## Repository layout
 
 ```
-agent-skills/
-├── free-cad-project-setup/
-│   └── SKILL.md
-├── freecad-fits-tolerances/
-│   └── SKILL.md
-├── freecad-threading/
-│   └── SKILL.md
-└── freecad-visual-validation/
-    └── SKILL.md
+agent-plugins/
+├── .github/plugin/
+│   └── marketplace.json      # GitHub Copilot CLI marketplace manifest
+├── .claude-plugin/
+│   └── marketplace.json      # Claude Code marketplace manifest
+└── freecad/
+    ├── plugin.json           # Plugin manifest
+    ├── agents/
+    │   ├── freecad-project.agent.md
+    │   └── freecad-visual-validation.agent.md
+    └── skills/
+        ├── freecad-fits-tolerances/
+        │   └── SKILL.md
+        └── freecad-threading/
+            └── SKILL.md
 ```

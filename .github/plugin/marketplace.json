@@ -1,0 +1,24 @@
+{
+  "name": "agent-plugins",
+  "owner": {
+    "name": "Sathya Vikram"
+  },
+  "metadata": {
+    "description": "Reusable agent plugins for AI coding assistants — FreeCAD CAD modelling, 3D printing, threading, fits & tolerances.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "freecad",
+      "description": "FreeCAD skills for project setup, threading, fits & tolerances, script execution, and visual validation of 3D models.",
+      "version": "1.0.0",
+      "source": "freecad",
+      "author": {
+        "name": "Sathya Vikram"
+      },
+      "license": "MIT",
+      "keywords": ["freecad", "cad", "3d-printing", "fdm", "skills", "agents"],
+      "category": "engineering"
+    }
+  ]
+}
