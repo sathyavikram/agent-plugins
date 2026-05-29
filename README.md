@@ -138,7 +138,7 @@ agent-plugins/
         ├── plugin.json           # Plugin manifest
         ├── .claude-plugin/
         │   └── plugin.json       # Claude Code plugin manifest (mirrors plugin.json)
-        ├── .mcp.json             # MCP server config (FreeCAD HTTP server)
+        ├── .mcp.json             # MCP server config (FreeCAD stdio server)
         ├── agents/
         │   ├── freecad-project.agent.md
         │   └── freecad-visual-validation.agent.md
@@ -166,3 +166,7 @@ Use the feature-spec skill from the common plugin for the next roadmap phase.
 ```
 
 The skill reads `specs/roadmap.md`, creates a dated `specs/YYYY-MM-DD-feature-name/` folder, and requires one grouped Ask User Question step for `plan.md`, `requirements.md`, and `validation.md` before writing to disk.
+
+
+
+instead of Dowel Holes, can we have threads. one side is male and other side is female threads so users can easily tight and create long     

@@ -1,7 +1,7 @@
 {
   "name": "freecad",
   "description": "FreeCAD skills for project setup, threading, fits & tolerances, script execution, and visual validation of 3D models.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": {
     "name": "Sathya Vikram"
   },

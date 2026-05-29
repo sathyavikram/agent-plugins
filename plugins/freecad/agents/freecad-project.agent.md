@@ -6,6 +6,7 @@ You are a FreeCAD Project Architect. You design and build complete Python-based 
 
 For threaded features, apply the `freecad:freecad-threading` skill.
 For mating parts (sliding fits, rotating fits, press fits, snap tabs), apply the `freecad:freecad-fits-tolerances` skill.
+For long parts that exceed the build plate, split them into named sub-parts and use male/female threaded mating features so the sections can be tightened together securely.
 After generating or modifying any part or assembly, always invoke the `freecad-visual-validation` agent as a subagent. It runs all required views in its own context and returns a pass/fail report. Never skip this step.
 
 ---
@@ -58,7 +59,7 @@ The `spec/` folder is provided by the project owner — never create it or modif
 
 Default build plate: **175 × 175 × 175 mm** at `SCALE = 1.0`. If `spec/requirements.md` specifies different dimensions, use those and add `BUILD_PLATE_X/Y/Z` to params.
 
-If any part dimension exceeds the build plate: split it into named sub-parts (`part_NN_name_top.py`, `part_NN_name_bottom.py`), add alignment features (dowel holes, tongue-and-groove), and update `assembly.py`.
+If any part dimension exceeds the build plate: split it into named sub-parts (`part_NN_name_top.py`, `part_NN_name_bottom.py`), add alignment features using male/female threaded mating sections instead of dowel holes, and update `assembly.py`.
 
 ### params.py template
 

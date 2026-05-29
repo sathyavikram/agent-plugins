@@ -25,7 +25,7 @@ Important: You *must* Ask User Question, grouped on these 3, before writing to d
 ## Phase 3 - Implementation & validation
 Implement the remaining task groups.
 Update specs/2026-03-30-hello-hono/plan.md with changes and implement
-Mark this specs/roadmap.md phase as complete, commit this work, switch to main, and merge this branch, then delete it.
+Mark this specs/roadmap.md phase as complete, update change log and commit this work, switch to main, and merge this branch, then delete it.
 
 ## Phase 4 - Re-planning
 Re-plan if needed . Update constution, spec/mission, roadmap, tech-stack
