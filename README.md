@@ -6,6 +6,7 @@ A collection of reusable agent skill files for AI coding assistants. Each skill 
 
 | Skill | Folder | Description |
 |---|---|---|
+| Changelog Maintenance | `plugins/common/skills/changelog-maintenance/` | Keep a root `CHANGELOG.md` grouped by date headings, bootstrapped from git history when missing |
 | FreeCAD Project Setup | `free-cad-project-setup/` | Project structure, params.py conventions, part files, assembly, export, and print orientation for FreeCAD Python projects |
 | FreeCAD Visual Validation | `freecad-visual-validation/` | MCP-based visual validation procedure — required views, what to check, and defect handling |
 | FreeCAD Threading | `freecad-threading/` | FDM-printable thread construction using `makeHelix` + `makePipeShell`, clearances, male/female patterns |
@@ -37,6 +38,16 @@ copilot plugin install freecad@agent-plugins
 
 # Claude Code
 claude plugin install freecad@agent-plugins
+```
+
+**Install the common workflow plugin:**
+
+```sh
+# GitHub Copilot CLI
+copilot plugin install common@agent-plugins
+
+# Claude Code
+claude plugin install common@agent-plugins
 ```
 
 **Browse available plugins:**
@@ -113,6 +124,13 @@ agent-plugins/
 ├── .claude-plugin/
 │   └── marketplace.json          # Symlink → .github/plugin/marketplace.json (Claude Code)
 └── plugins/
+    ├── common/
+    │   ├── plugin.json
+    │   ├── .claude-plugin/
+    │   │   └── plugin.json
+    │   └── skills/
+    │       └── changelog-maintenance/
+    │           └── SKILL.md
     └── freecad/
         ├── plugin.json           # Plugin manifest
         ├── .claude-plugin/
@@ -127,3 +145,13 @@ agent-plugins/
             └── freecad-threading/
                 └── SKILL.md
 ```
+
+## Example usage
+
+For manual pre-merge changelog updates in any project, invoke the shared skill explicitly:
+
+```text
+Use the changelog-maintenance skill from the common plugin before merging.
+```
+
+The skill keeps `CHANGELOG.md` at the project root, groups entries by `YYYY-MM-DD`, and bootstraps the file from git commits if it does not exist yet.

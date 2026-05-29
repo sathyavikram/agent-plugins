@@ -1,0 +1,14 @@
+{
+  "name": "common",
+  "description": "Common cross-project skills for repository maintenance and workflow tasks, including root CHANGELOG upkeep.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Sathya Vikram"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/intelligentmachine/agent-plugins",
+  "repository": "https://github.com/intelligentmachine/agent-plugins",
+  "keywords": ["common", "changelog", "git", "workflow", "skills"],
+  "category": "productivity",
+  "skills": "skills/"
+}

@@ -9,6 +9,18 @@
   },
   "plugins": [
     {
+      "name": "common",
+      "description": "Common cross-project skills for repository maintenance and workflow tasks, including root CHANGELOG upkeep.",
+      "version": "1.0.0",
+      "source": "./plugins/common",
+      "author": {
+        "name": "Sathya Vikram"
+      },
+      "license": "MIT",
+      "keywords": ["common", "changelog", "git", "workflow", "skills"],
+      "category": "productivity"
+    },
+    {
       "name": "freecad",
       "description": "FreeCAD skills for project setup, threading, fits & tolerances, script execution, and visual validation of 3D models.",
       "version": "1.0.0",
