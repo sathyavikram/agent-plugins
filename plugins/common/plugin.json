@@ -1,7 +1,7 @@
 {
   "name": "common",
   "description": "Common cross-project skills for repository maintenance and workflow tasks, including root CHANGELOG upkeep.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": {
     "name": "Sathya Vikram"
   },
