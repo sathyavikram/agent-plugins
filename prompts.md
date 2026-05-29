@@ -29,6 +29,8 @@ Mark this specs/roadmap.md phase as complete, commit this work, switch to main, 
 
 ## Phase 4 - Re-planning
 Re-plan if needed . Update constution, spec/mission, roadmap, tech-stack
+Use your changelog skill to update the changelog with work done on this branch.
+commit
 
 ## Phase 5 - Implementation & validation GoTo Phase 2
 GoTo Phase 2

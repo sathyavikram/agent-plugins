@@ -7,6 +7,7 @@ A collection of reusable agent skill files for AI coding assistants. Each skill 
 | Skill | Folder | Description |
 |---|---|---|
 | Changelog Maintenance | `plugins/common/skills/changelog-maintenance/` | Keep a root `CHANGELOG.md` grouped by date headings, bootstrapped from git history when missing |
+| Feature Spec Creation | `plugins/common/skills/feature-spec/` | Create a dated feature spec folder, branch from the next roadmap phase, and gather plan/requirements/validation inputs before writing |
 | FreeCAD Project Setup | `free-cad-project-setup/` | Project structure, params.py conventions, part files, assembly, export, and print orientation for FreeCAD Python projects |
 | FreeCAD Visual Validation | `freecad-visual-validation/` | MCP-based visual validation procedure — required views, what to check, and defect handling |
 | FreeCAD Threading | `freecad-threading/` | FDM-printable thread construction using `makeHelix` + `makePipeShell`, clearances, male/female patterns |
@@ -129,6 +130,8 @@ agent-plugins/
     │   ├── .claude-plugin/
     │   │   └── plugin.json
     │   └── skills/
+    │       ├── feature-spec/
+    │       │   └── SKILL.md
     │       └── changelog-maintenance/
     │           └── SKILL.md
     └── freecad/
@@ -155,3 +158,11 @@ Use the changelog-maintenance skill from the common plugin before merging.
 ```
 
 The skill keeps `CHANGELOG.md` at the project root, groups entries by `YYYY-MM-DD`, and bootstraps the file from git commits if it does not exist yet.
+
+For reusable feature scoping, invoke the shared feature spec skill explicitly:
+
+```text
+Use the feature-spec skill from the common plugin for the next roadmap phase.
+```
+
+The skill reads `specs/roadmap.md`, creates a dated `specs/YYYY-MM-DD-feature-name/` folder, and requires one grouped Ask User Question step for `plan.md`, `requirements.md`, and `validation.md` before writing to disk.
