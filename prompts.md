@@ -30,5 +30,5 @@ Mark this specs/roadmap.md phase as complete, commit this work, switch to main, 
 ## Phase 4 - Re-planning
 Re-plan if needed . Update constution, spec/mission, roadmap, tech-stack
 
-## Phase 5 - Implementation & validation GoTo Phase 3
-GoTo Phase 3
+## Phase 5 - Implementation & validation GoTo Phase 2
+GoTo Phase 2
